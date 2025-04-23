@@ -1,9 +1,6 @@
 from typing import Collection
 import mcp
 import json
-import asyncio
-import nest_asyncio
-nest_asyncio.apply()
 
 from opentelemetry.instrumentation.instrumentor import BaseInstrumentor
 from opentelemetry.trace import get_tracer
