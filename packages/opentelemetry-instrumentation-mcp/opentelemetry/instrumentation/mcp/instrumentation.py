@@ -243,7 +243,7 @@ class InstrumentedStreamWriter(ObjectProxy):  # type: ignore
     async def send(self, item: Any) -> Any:
         from mcp.types import JSONRPCMessage, JSONRPCRequest
 
-        request = cast(JSONRPCMessage, item).root
+        request = cast(JSONRPCMessage, item.message).root
 
         with self._tracer.start_as_current_span("ResponseStreamWriter") as span:
             if hasattr(request, "result"):
